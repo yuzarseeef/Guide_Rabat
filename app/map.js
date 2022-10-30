@@ -45,3 +45,9 @@ style="width: 1500px; height: 800px;"
 			if(window.console) window.console.log('exitFullscreen');
 		});
 
+    L.geoJSON(roads, {
+      style: function(feature) {
+          return {color: feature.properties.color}
+      }
+    
+  }).addTo(map);

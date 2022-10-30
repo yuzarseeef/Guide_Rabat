@@ -50,12 +50,15 @@ var roads = {
     ]
 };
 
+
 L.geoJSON(roads, {
     style: function(feature) {
         return {color: feature.properties.color}
     }
 	
 }).addTo(map);
+
+L.geoJSON(cafe).addTo(map);
 
 // L.geoJSON(roads, {
 //     style: function(feature) {
