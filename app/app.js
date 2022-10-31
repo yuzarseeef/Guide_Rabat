@@ -58,7 +58,36 @@ L.geoJSON(roads, {
 	
 }).addTo(map);
 
-L.geoJSON(cafe).addTo(map);
+var MyIcon = L.icon({
+    iconUrl: 'app/images/s80.jpg',
+    iconSize:     [20, 20], // size of the icon
+    shadowSize:   [15, 15], // size of the shadow
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    shadowAnchor: [15, 15],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+var MyIcon2 = L.icon({
+    iconUrl: 'app/images/mmlp.jpg',
+    iconSize:     [20, 20], // size of the icon
+    shadowSize:   [15, 15], // size of the shadow
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    shadowAnchor: [15, 15],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+L.geoJson(cafe  ,{
+    pointToLayer: function(feature,latlng){
+        switch (feature.properties.type) {
+            case 'cafe': return L.marker(latlng,{icon: MyIcon});
+            case 'fast_food': return L.marker(latlng,{icon: MyIcon2});
+    
+    }
+    //   return L.marker(latlng,{icon: MyIcon});
+    }
+  }).addTo(map);
+
+// L.geoJSON(cafe).addTo(map);
 
 // L.geoJSON(roads, {
 //     style: function(feature) {
