@@ -1,5 +1,5 @@
 <!--
-    Author : Youssef YAHYAOUI
+    Author : Youssef YAHYAOUI & Chaimae EL OUARDINI
 -->
 
 <!DOCTYPE html>
@@ -22,128 +22,130 @@
     <link href="fullscreen/Control.FullScreen.css" rel="stylesheet">
     <script src="data/cafe.geojson" type="text/javascript"></script>
     <script src="data/resto.geojson" type="text/javascript"></script>
-    <script src="data/activites.geojson" type="text/javascript"></script>
-    
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
-    
-        <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+    <script src="data/activites.geojson" type="text/javascript"></script> 
+
+ 
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
 
 </head>
 
 <body>
 
-  
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-      <div class="position-relative px-lg-5" style="z-index: 9;">
-          <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-              <a href="" class="navbar-brand">
-                  <h1 class="text-uppercase text-primary mb-1">Guide Rabat</h1>
-              </a>
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                  <div class="navbar-nav ml-auto py-0">
-                      <a href="index.html" class="nav-item nav-link active">Home</a>
-                      <a href="index.html" class="nav-item nav-link">About</a>
-                      <a href="index.html" class="nav-item nav-link">Service</a>
-                      <div class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Restaurants</a>
-                          <div class="dropdown-menu rounded-0 m-0">
-                              <a href="car.html" class="dropdown-item">Cafes</a>
-                              <a href="detail.html" class="dropdown-item">Car Detail</a>
-                              <a href="booking.html" class="dropdown-item">Car Booking</a>
-                          </div>
-                      </div>
-                      <div class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                          <div class="dropdown-menu rounded-0 m-0">
-                              <a href="team.html" class="dropdown-item">The Team</a>
-                              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                          </div>
-                      </div>
-                      <a href="contact.html" class="nav-item nav-link">Contact</a>
-                  </div>
-              </div>
-          </nav>
-      </div>
-  </div>
-  <!-- Navbar End -->
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
+                    <hr class="sidebar-divider">
+                    <div class="sidebar-heading">
+                        <p class="mb-0">INTERFACE</p>
+                    </div>
+                    <li class="nav-item">
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i>&nbsp;<span>Components</span></a>
+                            <div class="collapse" id="collapse-1">
+                                <div class="bg-white border rounded py-2 collapse-inner">
+                                    <h6 class="collapse-header">CUSTOM COMPONENTS:</h6><a class="collapse-item" href="buttons.html">Buttons</a><a class="collapse-item" href="cards.html">Cards</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button"><i class="fas fa-wrench"></i>&nbsp;<span>Utilities</span></a>
+                            <div class="collapse" id="collapse-2">
+                                <div class="bg-white border rounded py-2 collapse-inner">
+                                    <h6 class="collapse-header">CUSTOM UTILITIES:</h6><a class="collapse-item" href="utilities-color.html">Colors</a><a class="collapse-item" href="utilities-border.html">Borders</a><a class="collapse-item" href="utilities-animation.html">Animations</a><a class="collapse-item" href="utilities-other.html">Other</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="sidebar-divider">
+                    <div class="sidebar-heading">
+                        <p class="mb-0">Addons</p>
+                    </div>
+                    <li class="nav-item">
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button"><i class="fas fa-folder"></i>&nbsp;<span>Pages</span></a>
+                            <div class="collapse" id="collapse-3">
+                                <div class="bg-white border rounded py-2 collapse-inner">
+                                    <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="login.html">Login</a><a class="collapse-item" href="register.html">Register</a><a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                                    <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="404.html">404 Page</a><a class="collapse-item" href="blank.html">Blank Page</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapsePages" class="collapse" aria-labelledby="headingTwo" aria-controls="collapsePages" data-bs-parent="#accordionSidebar">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="#">Login</a><a class="collapse-item" href="#">Register</a><a class="collapse-item" href="#">Forgot Password</a>
+                                <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="#">404 Page</a><a class="collapse-item" href="#">Blank Page</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="charts.html"><i class="fas fa-chart-area"></i><span>&nbsp;Charts</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="tables.html"><i class="fas fa-table"></i><span>&nbsp;Tables</span></a></li>
+                    <hr class="sidebar-divider">
+                </ul>
+                <ul class="navbar-nav text-light" id="accordionSidebar"></ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-light navbar-expand-md">
+                            <div class="container-fluid"><a class="navbar-brand" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse" id="navcol-1">
+                                    
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#">Food </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Restaurants</a>
+                                <div class="checkbox">
+                                    <label>
+                                       <input type="checkbox" id="caf">
+                                       <span class="checkbox-material">
+                                           <span class="check"></span>
+                                       </span> Cafes 
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                       <input type="checkbox" id="res">
+                                       <span class="checkbox-material">
+                                           <span class="check"></span>
+                                       </span> Restaurants 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#">Dropdown </a>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                        </div>
+                        <div class="dropdown" style="padding: 1px;margin: 0px;margin-right: 150px;"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#">Dropdown </a>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- --------------------------------------------------------Map-------------------------------------------------------- -->
+                <div class="container-fluid" id="map" style="width: 1500px; height: 800px;"></div> 
 
-    <!-- Search Start -->
-    <div class="container-fluid bg-white pt-3 px-lg-5">
-      <div class="row mx-n2">
-          <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-              <select class="custom-select px-4 mb-3" style="height: 50px;">
-                  <option selected>Pickup Location</option>
-                  <option value="1">Location 1</option>
-                  <option value="2">Location 2</option>
-                  <option value="3">Location 3</option>
-              </select>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-              <select class="custom-select px-4 mb-3" style="height: 50px;">
-                  <option selected>Drop Location</option>
-                  <option value="1">Location 1</option>
-                  <option value="2">Location 2</option>
-                  <option value="3">Location 3</option>
-              </select>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-              <div class="date mb-3" id="date" data-target-input="nearest">
-                  <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
-                      data-target="#date" data-toggle="datetimepicker" />
-              </div>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-              <div class="time mb-3" id="time" data-target-input="nearest">
-                  <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
-                      data-target="#time" data-toggle="datetimepicker" />
-              </div>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-              <select class="custom-select px-4 mb-3" style="height: 50px;">
-                  <option selected>Select A Car</option>
-                  <option value="1">Car 1</option>
-                  <option value="2">Car 1</option>
-                  <option value="3">Car 1</option>
-              </select>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-              <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Search</button>
-          </div>
-      </div>
-  </div>
-  <!-- Search End -->
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2022</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/theme.js"></script>
 
-<div id="map" style="width: 1500px; height: 800px;"></div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
 
 </body>
 </html>

@@ -56,7 +56,7 @@ L.geoJson(resto  ,{
     pointToLayer: function(feature,latlng){
         switch (feature.properties.type) {
             case 'cafe': return L.marker(latlng,{icon: IconCafe});
-            case 'resto': return L.marker(latlng,{icon: IconResto});
+            case 'restaurant': return L.marker(latlng,{icon: IconResto});
             case 'fast_food': return L.marker(latlng,{icon: IconFastfood});
            }}}).addTo(map);
 
