@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Guide Rabat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    
     <!-- <link href="app/leaflet.css" rel="stylesheet"> -->
     <link href="style/css.css" rel="stylesheet">
     <!-- <script src="app/leaflet.js"></script> -->
@@ -32,6 +34,7 @@
     <script src="app/dist/Control.Geocoder.js"></script>
     <script src="app/dist/config.js"></script>
     <script src="app/dist/leaflet.contextmenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script defer src="app/dist/rout.js"></script> -->
     <!-- ---------------------------------------------stylesheets--------------------------------------------- -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -49,29 +52,102 @@
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                    <div class="sidebar-brand-text mx-3"><span>Rabat's Guide</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar-1">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Home</span></a></li>
                     <hr class="sidebar-divider">
                     <div class="sidebar-heading">
                         <p class="mb-0">INTERFACE</p>
                     </div>
                     <li class="nav-item">
-                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i>&nbsp;<span>Components</span></a>
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i>&nbsp;<span>Food</span></a>
                             <div class="collapse" id="collapse-1">
                                 <div class="bg-white border rounded py-2 collapse-inner">
-                                    <h6 class="collapse-header">CUSTOM COMPONENTS:</h6><a class="collapse-item" href="buttons.html">Buttons</a><a class="collapse-item" href="cards.html">Cards</a>
+                                    <div class="item">
+                                        <div class="sub-menu">
+                                          <a href="#" class="sub-item">
+                              
+                                          <div class="checkbox">
+                                            <label>
+                                               <input type="checkbox" id="restaurant"  onclick="validate1()">
+                                               <span class="checkbox-material">
+                                                   <span class="check"></span>
+                                                   </span> Restaurants
+                                            </label>
+                                            
+                                        </div>
+                                      </a>
+                                      <a href="#" class="sub-item">
+                              
+                                        <div class="checkbox">
+                                          <label>
+                                             <input type="checkbox" id="cafe"  onclick="validate2()">
+                                             <span class="checkbox-material">
+                                                 <span class="check"></span>
+                                             </span> Cafés 
+                                          </label>
+                                      </div>
+                                    </a>
+                                    <a href="#" class="sub-item">
+                              
+                                      <div class="checkbox">
+                                        <label>
+                                           <input type="checkbox" id="fastfood"  onclick="validate3()">
+                                           <span class="checkbox-material">
+                                               <span class="check"></span>
+                                           </span> Fast-Food
+                                        </label>
+                                    </div>
+                                  </a>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button"><i class="fas fa-wrench"></i>&nbsp;<span>Utilities</span></a>
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button"><i class="fas fa-wrench"></i>&nbsp;<span>Activités</span></a>
                             <div class="collapse" id="collapse-2">
                                 <div class="bg-white border rounded py-2 collapse-inner">
-                                    <h6 class="collapse-header">CUSTOM UTILITIES:</h6><a class="collapse-item" href="utilities-color.html">Colors</a><a class="collapse-item" href="utilities-border.html">Borders</a><a class="collapse-item" href="utilities-animation.html">Animations</a><a class="collapse-item" href="utilities-other.html">Other</a>
+                                    <div class="item">
+                                        <div class="sub-menu">
+                                          <a href="#" class="sub-item">
+                              
+                                          <div class="checkbox">
+                                            <label>
+                                               <input type="checkbox" id="musee" onclick="validate4()">
+                                               <span class="checkbox-material">
+                                                   <span class="check"></span>
+                                                   </span> Musées
+                                            </label>
+                                        </div>
+                                      </a>
+                                      <a href="#" class="sub-item">
+                              
+                                        <div class="checkbox">
+                                          <label>
+                                             <input type="checkbox" id="theatre" onclick="validate5()">
+                                             <span class="checkbox-material">
+                                                 <span class="check"></span>
+                                             </span> Théatres 
+                                          </label>
+                                      </div>
+                                    </a>
+                                    <a href="#" class="sub-item">
+                              
+                                      <div class="checkbox">
+                                        <label>
+                                           <input type="checkbox" id="parc" onclick="validate6()">
+                                           <span class="checkbox-material">
+                                               <span class="check"></span>
+                                           </span> Parcs
+                                        </label>
+                                    </div>
+                                  </a>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -82,19 +158,9 @@
                     </div>
                     <li class="nav-item">
                         <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button"><i class="fas fa-folder"></i>&nbsp;<span>Pages</span></a>
-                            <div class="collapse" id="collapse-3">
-                                <div class="bg-white border rounded py-2 collapse-inner">
-                                    <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="login.html">Login</a><a class="collapse-item" href="register.html">Register</a><a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                                    <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="404.html">404 Page</a><a class="collapse-item" href="blank.html">Blank Page</a>
-                                </div>
-                            </div>
+                           
                         </div>
-                        <div id="collapsePages" class="collapse" aria-labelledby="headingTwo" aria-controls="collapsePages" data-bs-parent="#accordionSidebar">
-                            <div class="bg-white border rounded py-2 collapse-inner">
-                                <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="#">Login</a><a class="collapse-item" href="#">Register</a><a class="collapse-item" href="#">Forgot Password</a>
-                                <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="#">404 Page</a><a class="collapse-item" href="#">Blank Page</a>
-                            </div>
-                        </div>
+                       
                     </li>
                     <li class="nav-item"><a class="nav-link" href="charts.html"><i class="fas fa-chart-area"></i><span>&nbsp;Charts</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="tables.html"><i class="fas fa-table"></i><span>&nbsp;Tables</span></a></li>
@@ -145,7 +211,7 @@
                     </div>
                 </nav>
                 <!-- --------------------------------------------------------Map-------------------------------------------------------- -->
-                <div class="container-fluid" id="map" style="width: 1500px; height: 800px;"></div> 
+                <div class="container-fluid" id="map" style="width: 1200px; height: 600px;"></div> 
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
@@ -158,5 +224,6 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/theme.js"></script>
 
+ 
 </body>
 </html>
