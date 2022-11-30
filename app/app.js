@@ -1,3 +1,5 @@
+// ---------------------------------------------------------- icons ----------------------------------------------------------
+
 var IconCafe = L.icon({
     iconUrl: 'app/images/cafe.png',
     iconSize:     [30, 30], // size of the icon
@@ -71,22 +73,19 @@ var IconForet = L.icon({
 });
 
 
-//food
 
-// L.geoJson(restaurants , {
-//     pointToLayer: function (feature, latLng) {
-//         return new L.marker(latLng, {
-//           icon: IconResto
-//         })
-//     }
-//   }).addTo(map);
+// ---------------------------------------------------------- popups ----------------------------------------------------------
 
 var restoadd = L.geoJson(restaurants, {
     pointToLayer: function(feature,latlng){
         return L.marker(latlng,{icon: IconResto})                   
     }, 
-    onEachFeature: function (feature, layer) {
-        layer.bindPopup("<b>Restaurant : </b> " + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.Rating);
+    onEachFeature: function (feature, layer) {layer.bindPopup(
+        "<b>Restaurant : </b> " + feature.properties.name + 
+        "</br>" +"<b>About : </b> "+ feature.properties.about + 
+        "</br>" + "<b>Rating : </b>" + feature.properties.Rating +
+        "</br>" + '<button onclick="addtoroute(feature)">Click me</button>' 
+        );
     }
   });
 
@@ -154,10 +153,11 @@ var riveradd = L.geoJson(rivieres, {
     }
   });
 
+// ---------------------------------------------------------- Checkbox ----------------------------------------------------------
+
 function validate1() {
     if ($("#restaurant").is(":checked")) {
         restoadd.addTo(map);
-
         ;}
     else {
         restoadd.remove();
