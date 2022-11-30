@@ -80,12 +80,9 @@ var restoadd = L.geoJson(restaurants, {
     pointToLayer: function(feature,latlng){
         return L.marker(latlng,{icon: IconResto})                   
     }, 
-    onEachFeature: function (feature, layer) {layer.bindPopup(
-        "<b>Restaurant : </b> " + feature.properties.name + 
-        "</br>" +"<b>About : </b> "+ feature.properties.about + 
-        "</br>" + "<b>Rating : </b>" + feature.properties.Rating +
-        "</br>" + '<button onclick="addtoroute(feature)">Click me</button>' 
-        );
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup( "</b><br> <center> <img src='app/imgpop/"+ feature.properties.name + ".png" + "' style='width:100px;height:200x;'></center>" + 
+        "<b>Restaurant : </b>" + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.Rating);
     }
   });
 
@@ -94,7 +91,8 @@ var cafesadd = L.geoJson(cafes, {
         return L.marker(latlng,{icon: IconCafe})                    
     }, 
     onEachFeature: function (feature, layer) {
-        layer.bindPopup("<b>Café's name : </b>" + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.rating);
+        layer.bindPopup("</b><br> <center> <img src='app/imgpop/"+ feature.properties.name + ".png" + "' style='width:100px;height:200x;'></center>"
+            + "<b>Café's name : </b>" + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.rating);
     }
   });
 
@@ -103,7 +101,7 @@ var fastfoodadd = L.geoJson(fastfood, {
         return L.marker(latlng,{icon: IconFastfood})                        
     }, 
     onEachFeature: function (feature, layer) {
-        layer.bindPopup("</b><br> <center> <img src='" + layer.feature.properties.Image + "' style='width:200px;height:300x;'></center>" 
+        layer.bindPopup("</b><br> <center> <img src='app/imgpop/"+ feature.properties.name + ".png" + "' style='width:100px;height:200x;'></center>" 
         + "<b>Fastfood's name : </b>" + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.rating);
     }
   });
