@@ -8,3 +8,16 @@
     height: 1000px;
     overflow-y: scroll;
 }
+
+center {
+    font-size: 30px;
+    color: green;
+}
+
+.wrapper ul li .icon
+{
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  color: #003147;
+}

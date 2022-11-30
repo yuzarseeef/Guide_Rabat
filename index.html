@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
     
-    <!-- <link href="app/leaflet.css" rel="stylesheet"> -->
+    <!-- <link href="app/leaflet.css" rel="stylesheet"> -->     
     <link href="style/css.css" rel="stylesheet">
     <!-- <script src="app/leaflet.js"></script> -->
     <script defer src="app/map.js"></script>
@@ -25,15 +25,22 @@
     <script src="fullscreen/Control.FullScreen.js"></script>
     <link href="fullscreen/Control.FullScreen.css" rel="stylesheet">
     <!-- ---------------------------------------------Data--------------------------------------------- -->
-    <script src="data/cafe.geojson" type="text/javascript"></script>
-    <script src="data/resto.geojson" type="text/javascript"></script>
-    <script src="data/activites.geojson" type="text/javascript"></script>
+    <script src="data/cafes.geojson" type="text/javascript"></script>
+    <script src="data/fastfood.geojson" type="text/javascript"></script>
+    <script src="data/restaurants.geojson" type="text/javascript"></script>
+    <script src="data/forets.geojson" type="text/javascript"></script>
+    <script src="data/musees.geojson" type="text/javascript"></script>
+    <script src="data/parcs.geojson" type="text/javascript"></script>
+    <script src="data/rivieres.geojson" type="text/javascript"></script>
+    <script src="data/theatres.geojson" type="text/javascript"></script>
+
     <!-- ---------------------------------------------leaflet-routing-machine--------------------------------------------- -->
 
     <script src="app/dist/leaflet-routing-machine.js"></script>
     <script src="app/dist/Control.Geocoder.js"></script>
     <script src="app/dist/config.js"></script>
     <script src="app/dist/leaflet.contextmenu.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script defer src="app/dist/rout.js"></script> -->
     <!-- ---------------------------------------------stylesheets--------------------------------------------- -->
@@ -62,7 +69,7 @@
                         <p class="mb-0">INTERFACE</p>
                     </div>
                     <li class="nav-item">
-                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i>&nbsp;<span>Food</span></a>
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"></i>&nbsp;<span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i>Food</span></a>
                             <div class="collapse" id="collapse-1">
                                 <div class="bg-white border rounded py-2 collapse-inner">
                                     <div class="item">
@@ -74,7 +81,7 @@
                                                <input type="checkbox" id="restaurant"  onclick="validate1()">
                                                <span class="checkbox-material">
                                                    <span class="check"></span>
-                                                   </span> Restaurants
+                                                   </span>Restaurants
                                             </label>
                                             
                                         </div>
@@ -134,12 +141,46 @@
                                              </span> Théatres 
                                           </label>
                                       </div>
+                                    </a>                                  
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button"><i class="fas fa-wrench"></i>&nbsp;<span>Nature</span></a>
+                            <div class="collapse" id="collapse-2">
+                                <div class="bg-white border rounded py-2 collapse-inner">
+                                    <div class="item">
+                                        <div class="sub-menu">
+                                          <a href="#" class="sub-item">
+                              
+                                          <div class="checkbox">
+                                            <label>
+                                               <input type="checkbox" id="foret" onclick="validate6()">
+                                               <span class="checkbox-material">
+                                                   <span class="check"></span>
+                                                   </span> Forêts
+                                            </label>
+                                        </div>
+                                      </a>
+                                      <a href="#" class="sub-item">
+                              
+                                        <div class="checkbox">
+                                          <label>
+                                             <input type="checkbox" id="riviere" onclick="validate8()">
+                                             <span class="checkbox-material">
+                                                 <span class="check"></span>
+                                             </span> Rivières 
+                                          </label>
+                                      </div>
                                     </a>
                                     <a href="#" class="sub-item">
                               
                                       <div class="checkbox">
                                         <label>
-                                           <input type="checkbox" id="parc" onclick="validate6()">
+                                           <input type="checkbox" id="parc" onclick="validate7()">
                                            <span class="checkbox-material">
                                                <span class="check"></span>
                                            </span> Parcs
@@ -153,18 +194,7 @@
                         </div>
                     </li>
                     <hr class="sidebar-divider">
-                    <div class="sidebar-heading">
-                        <p class="mb-0">Addons</p>
-                    </div>
-                    <li class="nav-item">
-                        <div><a class="btn btn-link nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button"><i class="fas fa-folder"></i>&nbsp;<span>Pages</span></a>
-                           
-                        </div>
-                       
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="charts.html"><i class="fas fa-chart-area"></i><span>&nbsp;Charts</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="tables.html"><i class="fas fa-table"></i><span>&nbsp;Tables</span></a></li>
-                    <hr class="sidebar-divider">
+            
                 </ul>
                 <ul class="navbar-nav text-light" id="accordionSidebar"></ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -215,7 +245,7 @@
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2022</span></div>
+                    <div class="text-center my-auto copyright"><span>2022</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

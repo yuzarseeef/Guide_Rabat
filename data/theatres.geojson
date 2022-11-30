@@ -1,0 +1,10 @@
+var theatres = {
+"type": "FeatureCollection",
+"name": "theatres",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "layer": "theatrespointsshp", "name": "Théatre Mohamed V" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -6.833296220800003, 34.020362700550002 ] ] } },
+{ "type": "Feature", "properties": { "id": 2, "layer": "theatrespointsshp", "name": "Grand théatre de Rabat" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -6.81531212634999, 34.025702622550007 ] ] } },
+{ "type": "Feature", "properties": { "id": 165480436, "layer": "theatrespointsshp", "name": "Salle Abbas El Fassi" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -6.8531476, 33.9903537 ] ] } }
+]
+};

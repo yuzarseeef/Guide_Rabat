@@ -1,0 +1,9 @@
+var musees = {
+"type": "FeatureCollection",
+"name": "musees",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "layer": "museumpointsshp","name": "Grand Théatre de Rabat","path": "C:/Users/HP/Documents/museumpointsshp.shp" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -6.81535026864999, 34.025702622550007 ] ] } },
+{ "type": "Feature", "properties": { "id": 2, "layer": "museumpointsshp","name": "Théatre Mohammed V", "path": "C:/Users/HP/Documents/museumpointsshp.shp" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -6.833353434250003, 34.020419914 ] ] } }
+]
+};

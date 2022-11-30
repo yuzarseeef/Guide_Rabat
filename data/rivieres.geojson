@@ -1,0 +1,8 @@
+var rivieres = {
+"type": "FeatureCollection",
+"name": "rivieres",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "واد ابو رقراق" }, "geometry": { "type": "Point", "coordinates": [ -6.831497455656935, 34.029095890861598 ] } }
+]
+};

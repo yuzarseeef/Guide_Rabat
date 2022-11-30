@@ -52,39 +52,121 @@ var IconTheatre = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+var IconRiviere = L.icon({
+    iconUrl: 'app/images/river.png',
+    iconSize:     [30, 30], // size of the icon
+    shadowSize:   [15, 15], // size of the shadow
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    shadowAnchor: [15, 15],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
-//restaurants
+var IconForet = L.icon({
+    iconUrl: 'app/images/foret.png',
+    iconSize:     [30, 30], // size of the icon
+    shadowSize:   [15, 15], // size of the shadow
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    shadowAnchor: [15, 15],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
-var restosadd =  L.geoJson(resto  ,{
-    pointToLayer: function(feature,latlng){
-        switch (feature.properties.type) {
-            // case 'cafe': return L.marker(latlng,{icon: IconCafe});
-            case 'restaurant': return L.marker(latlng,{icon: IconResto});
-            // case 'fast_food': return L.marker(latlng,{icon: IconFastfood});
-           }}});
 
-var cafesadd =  L.geoJson(resto  ,{
+//food
+
+// L.geoJson(restaurants , {
+//     pointToLayer: function (feature, latLng) {
+//         return new L.marker(latLng, {
+//           icon: IconResto
+//         })
+//     }
+//   }).addTo(map);
+
+var restoadd = L.geoJson(restaurants, {
     pointToLayer: function(feature,latlng){
-        switch (feature.properties.type) {
-            case 'cafe': return L.marker(latlng,{icon: IconCafe});
-           }}});
-var fastfoodadd =  L.geoJson(resto  ,{
+        return L.marker(latlng,{icon: IconResto})                   
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>Restaurant : </b> " + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.Rating);
+    }
+  });
+
+var cafesadd = L.geoJson(cafes, {
     pointToLayer: function(feature,latlng){
-        switch (feature.properties.type) {
-            case 'fast_food': return L.marker(latlng,{icon: IconFastfood});
-           }}});
+        return L.marker(latlng,{icon: IconCafe})                    
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>Café's name : </b>" + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.rating);
+    }
+  });
+
+var fastfoodadd = L.geoJson(fastfood, {
+    pointToLayer: function(feature,latlng){
+        return L.marker(latlng,{icon: IconFastfood})                        
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("</b><br> <center> <img src='" + layer.feature.properties.Image + "' style='width:200px;height:300x;'></center>" 
+        + "<b>Fastfood's name : </b>" + feature.properties.name + "</br>" +"<b>About : </b> "+ feature.properties.about +"</br>" + "<b>Rating : </b>" + feature.properties.rating);
+    }
+  });
+
+var museumadd = L.geoJson(musees, {
+    pointToLayer: function(feature,latlng){
+        return L.marker(latlng,{icon: IconMuseum})                        
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>Museum's name : </b>" + feature.properties.name );
+    }
+  });
+
+var theatreadd = L.geoJson(theatres, {
+    pointToLayer: function(feature,latlng){
+        return L.marker(latlng,{icon: IconTheatre})                        
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>Theater's name : </b>" + feature.properties.name );
+    }
+  });
+
+var foretsadd = L.geoJson(forets, {
+    pointToLayer: function(feature,latlng){
+        return L.marker(latlng,{icon: IconForet})                        
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>Forest's name : </b>" + feature.properties.name );
+    }
+  });
+
+var parcadd = L.geoJson(parcs, {
+    pointToLayer: function(feature,latlng){
+        return L.marker(latlng,{icon: IconParks})                        
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>Park's name : </b>" + feature.properties.name );
+    }
+  });
+
+var riveradd = L.geoJson(rivieres, {
+    pointToLayer: function(feature,latlng){
+        return L.marker(latlng,{icon: IconRiviere})                        
+    }, 
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup("<b>River's name : </b>" + feature.properties.name );
+    }
+  });
 
 function validate1() {
     if ($("#restaurant").is(":checked")) {
-        restosadd.addTo(map) ;
+        restoadd.addTo(map);
+
         ;}
     else {
-        restosadd.remove();
+        restoadd.remove();
         }}
 
 function validate2() {
     if ($("#cafe").is(":checked")) {
-        cafesadd.addTo(map) ;
+        cafesadd.addTo(map);
+        
         ;}
     else {
         cafesadd.remove();
@@ -98,57 +180,48 @@ function validate3() {
         fastfoodadd.remove();
         }}
 
-//activities
-var activitesadd = L.geoJson(activites  ,{
-    pointToLayer: function(feature,latlng){
-        switch (feature.properties.type) {
-            case 'museumpointsshp': return L.marker(latlng,{icon: IconMuseum});
-            case 'parkspointsshp': return L.marker(latlng,{icon: IconParks});
-            case 'theatrespointsshp': return L.marker(latlng,{icon: IconTheatre});
-           }}}).addTo(map);
+function validate4() {
+    if ($("#musee").is(":checked")) {
+        museumadd.addTo(map) ;
+        ;}
+    else {
+        museumadd.remove();
+        }}
+        
+function validate5() {
+    if ($("#theatre").is(":checked")) {
+        theatreadd.addTo(map) ;
+        ;}
+    else {
+        theatreadd.remove();
+        }}
 
-// L.geoJson(activites ,{
-//     pointToLayer: function(feature,latlng){
-//         switch (feature.properties.type) {
-//             case 'museumpointsshp': return L.marker(latlng,{icon: IconMuseum});
-//             case 'parkspointsshp': return L.marker(latlng,{icon: IconParks});
-//             case 'theatrespointsshp': return L.marker(latlng,{icon: IconTheatre});
-//             }}}).addTo(map);
+function validate6() {
+    if ($("#foret").is(":checked")) {
+        foretsadd.addTo(map) ;
+        ;}
+    else {
+        foretsadd.remove();
+        }}
 
-// var theatresadd = L.geoJson(activites ,{
-//     pointToLayer: function(feature,latlng){
-//         switch (feature.properties.layer) {
-//             case 'theatrespointsshp': return L.marker(latlng,{icon: IconTheatre});
-//             }}});
+function validate7() {
+    if ($("#parc").is(":checked")) {
+        parcadd.addTo(map) ;
+        ;}
+    else {
+        parcadd.remove();
+        }}
 
-// var parcadd = L.geoJson(activites ,{
-//     pointToLayer: function(feature,latlng){
-//         switch (feature.properties.layer) {
-//             case 'parkspointsshp': return L.marker(latlng,{icon: IconParks});
-//             }}});
+function validate8() {
+    if ($("#riviere").is(":checked")) {
+        riveradd.addTo(map) ;
+        ;}
+    else {
+        riveradd.remove();
+        }}
 
-// function validate4() {
-//     if ($("#musee").is(":checked")) {
-//         museeadd.addTo(map) ;
-//         ;}
-//     else {
-//         museeadd.remove();
-//         }}
-// function validate5() {
-//     if ($("#theatre").is(":checked")) {
-//         theatreadd.addTo(map) ;
-//         ;}
-//     else {
-//         theatreadd.remove();
-//         }}
-// function validate6() {
-//     if ($("#parc").is(":checked")) {
-//         parcadd.addTo(map) ;
-//         ;}
-//     else {
-//         parcadd.remove();
-//         }}
 
-// pop-up
 
-activitesadd.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
+
+

@@ -1,0 +1,15 @@
+var fastfood = {
+"type": "FeatureCollection",
+"name": "fastfood",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "osm_id": 414130096, "timestamp": null,"image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mcdonalds.com%2Fus%2Fen-us%2Fmeal%2Fhamburger-happy-meal.html&psig=AOvVaw3wICSpsGw1kWCIYbYCsEdm&ust=1669855103835000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLjJ7JTV1PsCFQAAAAAdAAAAABAR", "name": "McDonald's", "type": "fast_food", "about": "McDonald's Corporation is an American multinational fast food chain", "rating": 3.5 }, "geometry": { "type": "Point", "coordinates": [ -6.8473962, 33.9954722 ] } },
+{ "type": "Feature", "properties": { "osm_id": 444381355, "timestamp": null,"image": "fastfood", "name": "Pizza Hut", "type": "fast_food", "about": "leader de la restauration « semi-rapide » au Maroc, dans le respect du credo de Pizza Hut « esprit d'entreprise, croissance et leadership »", "rating": 3.1 }, "geometry": { "type": "Point", "coordinates": [ -6.8454694, 33.9982955 ] } },
+{ "type": "Feature", "properties": { "osm_id": -1865709704, "timestamp": null,"image": "fastfood", "name": "KFC", "type": "fast_food", "about": "Xtreme Spicy, Royal Strips, Dinner Meal, Family Mea", "rating": 4.3 }, "geometry": { "type": "Point", "coordinates": [ -6.8474489, 33.994844 ] } },
+{ "type": "Feature", "properties": { "osm_id": -1445078138, "timestamp": null,"image": "fastfood", "name": "Domino's Pizza", "type": "fast_food", "about": "Domino's Pizza est aujourd'hui parmi les leaders mondiaux de la pizza Américaine.", "rating": 4.6 }, "geometry": { "type": "Point", "coordinates": [ -6.8680298, 33.9604394 ] } },
+{ "type": "Feature", "properties": { "osm_id": -594052199, "timestamp": null,"image": "fastfood", "name": "Tacos de Lyon", "type": "fast_food", "about": "Restaurants TACOS DE LYON, la premiere franchise TACOS au Maroc", "rating": 3.0 }, "geometry": { "type": "Point", "coordinates": [ -6.8448274, 34.0200706 ] } },
+{ "type": "Feature", "properties": { "osm_id": -589154907, "timestamp": null,"image": "fastfood", "name": "La Graille", "type": "fast_food", "about": "LA GRAILLE SANDWICH ET PIZZA VARIES", "rating": 4.1 }, "geometry": { "type": "Point", "coordinates": [ -6.8500014, 34.0028469 ] } },
+{ "type": "Feature", "properties": { "osm_id": -294648181, "timestamp": null,"image": "fastfood", "name": "Quick", "type": "fast_food", "about": "le premier établissement de restauration rapide introduit en Europe.", "rating": 2.9 }, "geometry": { "type": "Point", "coordinates": [ -6.8477997, 33.9954967 ] } },
+{ "type": "Feature", "properties": { "osm_id": 1357967337, "timestamp": null,"image": "fastfood", "name": "Dunkin'", "type": "fast_food", "about": "Dunkin' est votre destination de toute la journée et de tous les jours du café et des donuts et pleines d'autres.", "rating": 4.2 }, "geometry": { "type": "Point", "coordinates": [ -6.8661585, 33.9624363 ] } }
+]
+};
